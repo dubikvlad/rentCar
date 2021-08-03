@@ -5,6 +5,7 @@
 $slider_height_pc: calc(100vh - 90px);
 $slider_height_mob: 50vh;
 $white: #fff;
+$gray: #f2f2f2;
 
 
 body {
@@ -14,6 +15,10 @@ body {
 
 .container {
     padding: 0 10px;
+}
+
+h1 {
+    font-size: 1.5rem;
 }
 
 .sticky {
@@ -101,7 +106,7 @@ body {
 }  
 
 main { 
-
+    padding-bottom: 1.5rem;
     .bx-wrapper {
         border: none;
         width: 100%;
@@ -142,6 +147,86 @@ main {
     
     .content {
         line-height: 1.2;
+        .content_head{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content-block {
+            padding: 1.5rem 0;
+        }
+        .content-img_block {
+            width: 25%;
+            max-width: 300px;
+            border-radius: 50%;
+            padding: 0 1.5rem;
+            .content_img {
+                object-fit: contain;
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+            }
+        }
+        .content-info {
+            padding: 2.5rem 0;
+            .content-info_text {
+                display: block;
+                max-width: 620px;
+                margin: auto;
+                padding: 1.5rem;
+                border: 3px $gray solid;
+            }
+        }
+
+        .content-info-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            font-size: 0.7rem;
+            font-weight: 500;
+            align-items: center;
+        }
+
+        .content_card {
+            padding: 1.5rem;
+            width: 120px;
+            text-align: center;
+        }
+        
+        .card_round{
+            width: 120px;
+            height: 120px;
+            background-color: yellow;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+footer {
+    background-color: $gray;
+    padding-bottom: 1.5rem;
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer-info{
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1.5rem;
+        .footer-phone{
+            font-size: 1.5rem;
+            padding: 10px 0;
+        }
+    }
+    .footer-img {
+        width: 100px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
     }
 }
 
@@ -178,19 +263,24 @@ main {
         overflow-x: hidden;
         transition: 0.3s;
         display: flex;
+
         .mob-menu_container {
             z-index: 10001;
             height: 100%;
             width: 80%;
-            max-width: 280px;
+            max-width: 300px;
             background-color: $white;
-            padding: 0 15px;
+
+            .mob-menu_item {
+                padding-left: 1.5rem;
+            }
             .header_logo{
                 display: block;
                 margin-bottom: 10px;
                 font-size: 1.2rem;
                 padding-top: 15px;
             }
+
             .nav_list {
                 a {
                     display: block;
@@ -199,6 +289,7 @@ main {
                     width: 100%;
                 }
             }
+
             .mob-menu_contacts {
                 display: flex;
                 flex-direction: column;
@@ -210,12 +301,29 @@ main {
                 }
             }
         }
+        .mob-menu_background {
+            height: 100%;
+            flex-grow: 1;
+            content: '';
+        }
     }
-    .mob-menu_background {
-        height: 100%;
-        width: 100%;
-        content: '';
+        
+
+    main{
+        .content {
+            line-height: 1.2;
+            .content_head{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .content-img_block {
+                width: 100%;
+            }
+        }
     }
+    
 }
 
 @media screen and(max-width: 540px) {
@@ -237,5 +345,11 @@ main {
                 text-align: center;
             }
         }
-    }    
+    }
+    
+    footer {
+        .footer-content {
+            flex-direction: column-reverse;
+        }
+    }
 } 
